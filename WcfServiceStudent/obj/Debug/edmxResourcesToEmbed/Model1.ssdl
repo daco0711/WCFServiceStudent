@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="StudentModelStoreContainer">
+    <EntitySet Name="tbl_student" EntityType="StudentModel.Store.tbl_student" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudenDetailsView" EntityType="StudentModel.Store.StudenDetailsView" store:Type="Views" store:Schema="dbo" store:Name="StudenDetailsView">
+      <DefiningQuery>SELECT 
+      [StudenDetailsView].[Expr1] AS [Expr1], 
+      [StudenDetailsView].[Expr2] AS [Expr2], 
+      [StudenDetailsView].[Expr3] AS [Expr3], 
+      [StudenDetailsView].[Expr4] AS [Expr4], 
+      [StudenDetailsView].[ID] AS [ID], 
+      [StudenDetailsView].[StudentName] AS [StudentName], 
+      [StudenDetailsView].[IndexNumber] AS [IndexNumber], 
+      [StudenDetailsView].[City] AS [City], 
+      [StudenDetailsView].[Address] AS [Address], 
+      [StudenDetailsView].[JMBG] AS [JMBG], 
+      [StudenDetailsView].[Sex] AS [Sex], 
+      [StudenDetailsView].[BirthDate] AS [BirthDate]
+      FROM [dbo].[StudenDetailsView] AS [StudenDetailsView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="tbl_student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="150" />
+    <Property Name="IndexNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="150" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" />
+    <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Student.dbo.StudenDetailsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="StudenDetailsView">
+    <Key>
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="Expr2" Type="nvarchar" MaxLength="150" />
+    <Property Name="Expr3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expr4" Type="nvarchar" MaxLength="150" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="150" />
+    <Property Name="IndexNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="150" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" />
+    <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="datetime" />
+  </EntityType>
+</Schema>

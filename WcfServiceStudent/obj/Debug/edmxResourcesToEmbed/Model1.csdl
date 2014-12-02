@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="StudentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_student" EntityType="StudentModel.tbl_student" />
+    <EntitySet Name="StudenDetailsViews" EntityType="StudentModel.StudenDetailsView" />
+  </EntityContainer>
+  <EntityType Name="tbl_student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="IndexNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="JMBG" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Sex" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BirthDate" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="StudenDetailsView">
+    <Key>
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="Expr2" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Expr3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Expr4" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StudentName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="IndexNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="JMBG" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Sex" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BirthDate" Type="DateTime" />
+  </EntityType>
+</Schema>

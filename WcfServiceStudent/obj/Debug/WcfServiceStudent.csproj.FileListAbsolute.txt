@@ -1,0 +1,5 @@
+D:\Diplomski\WcfServiceStudent\WcfServiceStudent\bin\WcfServiceStudent.dll
+D:\Diplomski\WcfServiceStudent\WcfServiceStudent\bin\WcfServiceStudent.pdb
+D:\Diplomski\WcfServiceStudent\WcfServiceStudent\obj\Debug\ResolveAssemblyReference.cache
+D:\Diplomski\WcfServiceStudent\WcfServiceStudent\obj\Debug\WcfServiceStudent.dll
+D:\Diplomski\WcfServiceStudent\WcfServiceStudent\obj\Debug\WcfServiceStudent.pdb

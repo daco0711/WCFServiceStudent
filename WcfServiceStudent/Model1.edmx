@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StudentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="StudentModelStoreContainer">
+          <EntitySet Name="tbl_student" EntityType="StudentModel.Store.tbl_student" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StudenDetailsView" EntityType="StudentModel.Store.StudenDetailsView" store:Type="Views" store:Schema="dbo" store:Name="StudenDetailsView">
+            <DefiningQuery>SELECT 
+      [StudenDetailsView].[Expr1] AS [Expr1], 
+      [StudenDetailsView].[Expr2] AS [Expr2], 
+      [StudenDetailsView].[Expr3] AS [Expr3], 
+      [StudenDetailsView].[Expr4] AS [Expr4], 
+      [StudenDetailsView].[ID] AS [ID], 
+      [StudenDetailsView].[StudentName] AS [StudentName], 
+      [StudenDetailsView].[IndexNumber] AS [IndexNumber], 
+      [StudenDetailsView].[City] AS [City], 
+      [StudenDetailsView].[Address] AS [Address], 
+      [StudenDetailsView].[JMBG] AS [JMBG], 
+      [StudenDetailsView].[Sex] AS [Sex], 
+      [StudenDetailsView].[BirthDate] AS [BirthDate]
+      FROM [dbo].[StudenDetailsView] AS [StudenDetailsView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="tbl_student">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="150" />
+          <Property Name="IndexNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Student.dbo.StudenDetailsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="StudenDetailsView">
+          <Key>
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="Expr2" Type="nvarchar" MaxLength="150" />
+          <Property Name="Expr3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expr4" Type="nvarchar" MaxLength="150" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="150" />
+          <Property Name="IndexNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="datetime" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StudentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="StudentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_student" EntityType="StudentModel.tbl_student" />
+          <EntitySet Name="StudenDetailsViews" EntityType="StudentModel.StudenDetailsView" />
+        </EntityContainer>
+        <EntityType Name="tbl_student">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="IndexNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="JMBG" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="StudenDetailsView">
+          <Key>
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="Expr2" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Expr3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Expr4" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="StudentName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="IndexNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="JMBG" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StudentModelStoreContainer" CdmEntityContainer="StudentEntities">
+          <EntitySetMapping Name="tbl_student"><EntityTypeMapping TypeName="StudentModel.tbl_student"><MappingFragment StoreEntitySet="tbl_student">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+            <ScalarProperty Name="IndexNumber" ColumnName="IndexNumber" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="Address" ColumnName="Address" />
+            <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+            <ScalarProperty Name="Sex" ColumnName="Sex" />
+            <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="StudenDetailsViews"><EntityTypeMapping TypeName="StudentModel.StudenDetailsView"><MappingFragment StoreEntitySet="StudenDetailsView">
+            <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+            <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+            <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+            <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+            <ScalarProperty Name="IndexNumber" ColumnName="IndexNumber" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="Address" ColumnName="Address" />
+            <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+            <ScalarProperty Name="Sex" ColumnName="Sex" />
+            <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="StudentModel.tbl_student" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentModel.StudenDetailsView" Width="1.5" PointX="2.75" PointY="0.75" Height="3.3263964843749996" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
