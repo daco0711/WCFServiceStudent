@@ -8,7 +8,6 @@ using System.Text;
 
 namespace WcfServiceStudent
 {
-    // Github proba
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract(Namespace = "WcfServiceStudent")]
     public interface IService1
@@ -24,7 +23,7 @@ namespace WcfServiceStudent
         Student getStudentById(int studentID);
 
         [OperationContract(Action = "StudentService/deleteStudent")]
-        void deleteStudent(Int32 studentID);
+        void deleteStudent(int studentID);
 
         [OperationContract(Action = "StudentService/AddStudent")]
         void addStudent(String studentName,String IndexNumber, String City, String address, String jmbg, String sex, DateTime datumRodj );
@@ -105,11 +104,6 @@ namespace WcfServiceStudent
             get { return birthDate; }
             set { birthDate = value; }
         }
-
-
-
-
-
     }
 
 

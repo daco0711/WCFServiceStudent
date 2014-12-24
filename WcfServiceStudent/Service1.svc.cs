@@ -165,9 +165,8 @@ namespace WcfServiceStudent
             return student;
         }
 
-        public void deleteStudent(Int32 studentID)
+        public void deleteStudent(int studentID)
         {
-
             Student delStud = new Student();
             SqlConnection connection = new SqlConnection();
             DataSet dataSet = new DataSet();
